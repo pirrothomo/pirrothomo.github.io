@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lexo — Pirro Thomo</title>
 <link rel="stylesheet" href="assets/site.css">
+
+<!-- reader.js only discovers pdf.min.mjs (328 KB) when it runs, a round trip
+     into the page. Start it with the HTML instead; the request log confirms it
+     is still fetched exactly once.
+     The 1.3 MB worker cannot be started early the same way: warming it with
+     fetch() and handing pdf.js a pre-built Worker via workerPort were both
+     tried, and each time pdf.js requested the file again, so 1.3 MB came down
+     twice. Leave the worker to pdf.js. -->
+<link rel="modulepreload" href="vendor/pdfjs/pdf.min.mjs">
 <style>
   html, body { height: 100%; overflow: hidden; }
   body { display: flex; flex-direction: column; background: var(--paper-2); }
