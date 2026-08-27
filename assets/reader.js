@@ -117,6 +117,13 @@ async function build() {
   viewer.innerHTML = "";
   pageBoxes = [];
   const w = targetWidth();
+
+  /* A long book used to stall here: every box was appended to the live DOM one
+     at a time and given two observers, and only then did page 1 start. For 904
+     pages that is 904 insertions and 1808 observer registrations before the
+     reader draws anything. Build off-document, insert once, draw page 1, and
+     wire up the observers afterwards. */
+  const frag = document.createDocumentFragment();
   for (let n = 1; n <= pdf.numPages; n++) {
     const box = document.createElement("div");
     box.className = "pg";
@@ -127,12 +134,19 @@ async function build() {
     label.className = "pg-num";
     label.textContent = n;
     box.appendChild(label);
-    viewer.appendChild(box);
+    frag.appendChild(box);
     pageBoxes.push(box);
-    io.observe(box);
-    ioCurrent.observe(box);
   }
+  viewer.appendChild(frag);
+
   renderPage(1);
+
+  // Observers only matter once the reader can scroll, so they can wait a tick.
+  const observeAll = () => {
+    for (const box of pageBoxes) { io.observe(box); ioCurrent.observe(box); }
+  };
+  if (window.requestIdleCallback) requestIdleCallback(observeAll, { timeout: 300 });
+  else setTimeout(observeAll, 0);
 }
 
 async function renderPage(n) {
