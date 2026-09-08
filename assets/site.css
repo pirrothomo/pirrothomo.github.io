@@ -318,3 +318,31 @@ img, table, pre { max-width: 100%; }
   color: var(--ink-faint);
 }
 .plates cite { font-style: italic; color: var(--ink-soft); }
+
+
+/* Lectures that have both a written text and an illustration deck offer each
+   separately: the text is a few hundred KB, the plates can be 19 MB. */
+.item.has-text .item-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: .4rem;
+}
+.item.has-text .act {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+}
+.act-lbl {
+  font-family: var(--sans);
+  font-size: .72rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-right: .15rem;
+  white-space: nowrap;
+}
+@media (max-width: 40rem) {
+  .item.has-text .item-actions { align-items: flex-start; }
+  .item.has-text .act { flex-wrap: wrap; }
+}
