@@ -320,16 +320,25 @@ img, table, pre { max-width: 100%; }
 .plates cite { font-style: italic; color: var(--ink-soft); }
 
 
-/* Lectures that have both a written text and an illustration deck offer each
-   separately: the text is a few hundred KB, the plates can be 19 MB. */
+/* List actions. Lectures with a written text offer it separately from the
+   plates (a few hundred KB against up to 19 MB). Every row sits on the same
+   grid, a label column then two fixed-width buttons, so the buttons line up
+   down the page instead of shifting with the label and file-size widths. */
+.item-actions .btn { justify-content: center; }
+.item:not(.has-text) .item-actions {
+  display: grid;
+  grid-template-columns: 4.2rem 7.4rem;
+  gap: .35rem;
+  justify-content: end;
+}
 .item.has-text .item-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  display: grid;
   gap: .4rem;
+  justify-items: end;
 }
 .item.has-text .act {
-  display: flex;
+  display: grid;
+  grid-template-columns: 5.6rem 4.2rem 7.4rem;
   align-items: center;
   gap: .35rem;
 }
@@ -339,10 +348,20 @@ img, table, pre { max-width: 100%; }
   letter-spacing: .04em;
   text-transform: uppercase;
   color: var(--ink-faint);
-  margin-right: .15rem;
+  text-align: right;
+  margin-right: .3rem;
   white-space: nowrap;
 }
-@media (max-width: 40rem) {
-  .item.has-text .item-actions { align-items: flex-start; }
-  .item.has-text .act { flex-wrap: wrap; }
+
+/* Lexo is the main action on each row, drawn in the site's accent as an
+   outline so the eye has somewhere to go without a column of solid red
+   blocks. The hover text uses --paper rather than white so it stays legible
+   on the lighter accent of dark mode. */
+.btn-read { color: var(--accent); border-color: var(--accent); }
+.btn-read:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+
+@media (max-width: 46rem) {
+  .item:not(.has-text) .item-actions { justify-content: start; }
+  .item.has-text .item-actions { justify-items: start; }
+  .act-lbl { text-align: left; }
 }
