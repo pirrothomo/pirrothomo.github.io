@@ -256,8 +256,8 @@
   "en": "The architecture of rural dwellings in northern Albania in the 19th century"
  },
  "art-etat-et-acquisitions": {
-  "sq": "Etat et acquisitions des études sur l’histoire de l’architecture albanaise (jusqu’en 1912)",
-  "en": "Etat et acquisitions des études sur l’histoire de l’architecture albanaise (jusqu’en 1912)"
+  "sq": "Gjendja dhe arritjet e studimeve të historisë së arkitekturës shqiptare (deri në v. 1912)",
+  "en": "The state and achievements of studies on the history of Albanian architecture (up to 1912)"
  },
  "art-vangjush-mio-korce": {
   "sq": "Restaurimi i banesës së «Piktorit të Popullit» Vangjush Mio në Korçë",
@@ -426,5 +426,9 @@
  "lek-paraqitja-tekst": {
   "sq": "Arkitektura kishtare në Shqipëri — teksti",
   "en": "Church architecture in Albania — the text"
+ },
+ "art-vendbanimet-banesa-xiv-xviii": {
+  "sq": "Karakteri dhe tiparet e vendbanimeve dhe të banesës fshatare shqiptare në shek. XIV–XVIII",
+  "en": "The character and features of Albanian rural settlements and dwellings, 14th to 18th centuries"
  }
 }

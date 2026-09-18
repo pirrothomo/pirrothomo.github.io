@@ -11,10 +11,10 @@ architecture, vernacular housing and the restoration of monuments in Albania.
 ## Përmbajtja / Contents
 
 - 11 libra / books
-- 51 artikuj e kumtesa / articles and conference papers
+- 52 artikuj e kumtesa / articles and conference papers
 - 28 leksione / lectures
 
-7,185 faqe gjithsej / pages in total.
+7,479 faqe gjithsej / pages in total.
 
 ## Shënim teknik / Technical note
 
