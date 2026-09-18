@@ -374,6 +374,14 @@ img, table, pre { max-width: 100%; }
   letter-spacing: .09em; text-transform: uppercase; color: var(--ink-faint);
   margin: 2.5rem 0 .2rem;
 }
+/* On the books list, the line naming the colour plates or the translated
+   editions. It sits under the buttons so the card's own actions stay first. */
+.card-also {
+  font-family: var(--sans); font-size: .78rem; color: var(--ink-faint);
+  margin: .7rem 0 0;
+}
+.card-also a { color: var(--accent); }
+
 .editions { max-width: 40rem; }
 .editions .item-title { font-size: .94rem; }
 .editions .item { padding: .75rem 0; align-items: center; }
