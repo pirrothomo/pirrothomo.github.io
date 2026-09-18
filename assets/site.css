@@ -365,3 +365,15 @@ img, table, pre { max-width: 100%; }
   .item.has-text .item-actions { justify-items: start; }
   .act-lbl { text-align: left; }
 }
+
+/* Companion volumes and translated editions on a book's page. Same row as the
+   article and lecture lists, so the buttons look and line up the same way; the
+   book's own filled button stays above it and keeps the hierarchy. */
+.also {
+  font-family: var(--sans); font-size: .74rem; font-weight: 600;
+  letter-spacing: .09em; text-transform: uppercase; color: var(--ink-faint);
+  margin: 2.5rem 0 .2rem;
+}
+.editions { max-width: 40rem; }
+.editions .item-title { font-size: .94rem; }
+.editions .item { padding: .75rem 0; align-items: center; }
