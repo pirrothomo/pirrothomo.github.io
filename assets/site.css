@@ -336,9 +336,12 @@ img, table, pre { max-width: 100%; }
   gap: .4rem;
   justify-items: end;
 }
+/* The label column has to hold the longest word in either language, and the
+   label is nowrap, so too narrow means it runs through the Read button rather
+   than wrapping. "Illustrations" is the longest; "Ilustrimet" is shorter. */
 .item.has-text .act {
   display: grid;
-  grid-template-columns: 5.6rem 4.2rem 7.4rem;
+  grid-template-columns: 7rem 4.2rem 7.4rem;
   align-items: center;
   gap: .35rem;
 }
